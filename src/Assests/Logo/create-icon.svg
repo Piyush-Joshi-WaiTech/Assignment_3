@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.5" height="17.5" viewBox="0 0 17.5 17.5">
+  <g id="sticky-note-add--common-add-file-plus" transform="translate(0.25 0.25)">
+    <path id="Vector" d="M10.962,16.5H1.731A1.231,1.231,0,0,1,.5,15.269V1.731A1.231,1.231,0,0,1,1.731.5H15.269A1.231,1.231,0,0,1,16.5,1.731v9.231Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Vector_2" d="M9,9.615v4.923L14.538,9H9.615A.615.615,0,0,0,9,9.615Z" transform="translate(1.962 1.962)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Vector_3" d="M6,3V9.154" transform="translate(1.269 0.577)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Vector_4" d="M9.654,5.5H3.5" transform="translate(0.692 1.154)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>

@@ -1,0 +1,836 @@
+.logo {
+  display: block;
+  width: 120px;
+  height: auto;
+  max-height: 50px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.nav-item {
+  margin-bottom: 30px !important; /* Adjust the value as needed */
+}
+.navbar-heading {
+  position: absolute; /* Ensures precise positioning */
+  top: 18px; /* Moves it down */
+  left: 314px; /* Moves it to the right */
+  width: 235px;
+  height: 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500; /* Medium */
+  line-height: 27px;
+  letter-spacing: 0px;
+  color: #323232; /* Main heading color */
+  text-align: left;
+  opacity: 1;
+}
+/* .navbar::after {
+  display: none;
+} */
+
+.sidebar .nav-item .nav-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500; /* Medium */
+  line-height: 21px;
+  letter-spacing: 0px;
+  color: #797a7a;
+  text-transform: uppercase;
+  opacity: 1;
+}
+/* Remove dropdown arrow from Team Members */
+.sidebar .nav-item.team-members .nav-link::after {
+  content: none;
+}
+.sidebar .nav-link {
+  padding-left: 20px; /* Adjust this value as needed */
+}
+
+/* Add dropdown arrow to Learning Path */
+.sidebar .nav-item.learning-path .nav-link::after {
+  content: ">";
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #797a7a;
+}
+
+/* Breadcrumb Text - Team Member > Team Members > Add Team Member */
+.breadcrumb-nav {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #6c757d;
+  margin-left: 20px; /* Adjust for spacing */
+  padding: 10px 0;
+}
+
+/* Last breadcrumb should be bold */
+.breadcrumb-nav .active {
+  font-weight: bold;
+  color: #323232;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .breadcrumb-nav {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb-nav {
+    font-size: 9px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-img-main {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+/* Ensure it stays big in responsive mode */
+@media (max-width: 992px) {
+  .profile-img-main {
+    width: 140px !important;
+    height: 140px !important;
+  }
+}
+@media (max-width: 768px) {
+  .profile-img-main {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 992px) {
+  .profile-img-main {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-img-main {
+    width: 120px !important; /* Slightly smaller for very small screens */
+    height: 120px !important;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 992px) {
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.profile-img-main {
+  float: none !important;
+}
+/* .profile-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+} */
+/* .profileee {
+  transition: filter 0.3s ease-in-out; 
+}
+.profileee:hover {
+  filter: blur(2px); 
+} */
+
+/* Adjust for medium screens */
+@media (max-width: 992px) {
+  .profile-img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 576px) {
+  .profile-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.flag-icon {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.navbar {
+  display: flex !important;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 250px);
+  height: 90px;
+  z-index: 1050;
+  background: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+  flex-wrap: nowrap;
+  padding-bottom: 0;
+}
+.navbar-right {
+  display: flex !important;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+}
+/* Profile image in the navbar */
+.profile-img-navbar {
+  width: 40px; /* Default for navbar */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.notification-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Default sidebar (visible) */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 70px);
+  background: #ffffff;
+  padding-top: 30px;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: left 0.3s ease; /* Smooth transition */
+}
+
+.sidebar .nav-link {
+  color: #797a7a;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+/* Active or hovered links */
+/* .sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  color: #000 !important; 
+}  */
+
+.sidebar .nav-item {
+  margin-bottom: 10px; /* Adjust spacing between items */
+}
+
+/* Sidebar hidden when collapsed */
+.sidebar.collapsed {
+  left: -250px;
+}
+
+/* Sidebar toggle button for small screens */
+#sidebarToggle {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  z-index: 1050;
+}
+@media (max-width: 992px) {
+  .profile-img-main {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Adjust for small screens */
+@media (max-width: 991px) {
+  .sidebar {
+    left: -250px; /* Sidebar hidden by default */
+  }
+  .sidebar.collapsed {
+    left: 0; /* Show sidebar */
+  }
+}
+/* Main Content: Ensure it does not overlap the sidebar */
+.content {
+  margin-left: 250px; /* Ensure it does not overlap sidebar */
+  margin-top: 90px;
+  padding: 20px;
+  width: calc(100% - 250px); /* Full width minus sidebar width */
+  min-height: 100vh;
+  background: #fff;
+  border-radius: 1px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Shadow effect */
+}
+.main-content {
+  margin-top: -20px; /* Adjust upward without affecting responsiveness */
+}
+
+/* For small screens (tablets and mobile), adjust content layout */
+@media (max-width: 992px) {
+  .content {
+    margin-left: 0; /* No left margin on smaller screens */
+    width: 100%; /* Take full width */
+  }
+
+  .button-group {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the start */
+    margin-top: 10px;
+  }
+
+  .card-body {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .card {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .profile-img-main {
+    width: 100px; /* Smaller profile image */
+    height: 100px;
+    margin-right: 15px;
+  }
+  /* Ensure First & Last Name Fields Align with Department */
+  .input-group {
+    width: 100%; /* Expand input fields */
+    display: flex;
+    gap: 15px;
+  }
+
+  .input-group input {
+    flex: 1; /* Ensures equal width */
+  }
+  .h3 {
+    font-size: 1rem;
+  }
+
+  .ms-3 {
+    margin-left: 0.6rem;
+  }
+
+  /* Adjust form layout for small screens */
+  .row.mb-3 {
+    flex-direction: column; /* Stack form fields vertically */
+    gap: 10px; /* Add space between fields */
+  }
+
+  .col-md-6 {
+    flex: 1 0 100%; /* Ensure form fields take full width */
+  }
+
+  .col-md-2 {
+    width: 100%; /* Make profile image section full width */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust margin for input fields */
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    font-size: 0.875rem;
+  }
+
+  /* Adjust the width of select fields */
+  .custom-dropdown {
+    font-size: 0.875rem;
+  }
+}
+
+/* For very small screens (e.g., mobile phones), make further adjustments */
+@media (max-width: 576px) {
+  .content {
+    padding: 10px;
+  }
+
+  .button-group {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+  }
+
+  .profile-img-main {
+    width: 80px; /* Make profile image smaller */
+    height: 80px;
+  }
+
+  .h3 {
+    font-size: 1rem; /* Smaller header text */
+  }
+
+  .col-3 {
+    flex: 1 0 100%; /* Full width for form sections */
+    margin-bottom: 10px;
+  }
+
+  .col-md-2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-control {
+    font-size: 0.875rem;
+    padding: 8px;
+  }
+
+  /* Adjust the spacing between form fields */
+  .form-label {
+    font-size: 0.85rem;
+  }
+
+  /* Adjust the select fields */
+  .custom-dropdown {
+    font-size: 0.875rem;
+  }
+}
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+/* Responsive Buttons */
+.button-group .btn {
+  min-width: 100px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+/* Responsive Form Styling */
+@media (max-width: 992px) {
+  .button-group {
+    justify-content: center;
+  }
+
+  .profile-img-navbar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .container .row {
+    flex-direction: column;
+  }
+
+  .col-md-2,
+  .col-md-9,
+  .col-3 {
+    width: 100%;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+}
+
+/* For smaller screens */
+@media (max-width: 576px) {
+  .button-group .btn {
+    width: 100%;
+  }
+
+  .profile-img-main {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 992px) {
+  .navbar {
+    height: 70px; /* Slightly smaller navbar */
+    padding: 10px;
+  }
+
+  .profile-img-navbar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .content {
+    margin-left: 0; /* Remove sidebar space on small screens */
+    width: 100%;
+    margin-top: 80px; /* Adjust for navbar */
+  }
+
+  .navbar-right {
+    gap: 10px; /* Reduce spacing */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: row; /* Ensure navbar stays in a row */
+    height: 60px;
+    padding: 5px 10px;
+  }
+
+  .profile-img-navbar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .notification-icon {
+    font-size: 20px;
+  }
+
+  .content {
+    margin-top: 70px; /* Ensure navbar doesn't overlap */
+    padding: 10px;
+  }
+}
+@media (max-width: 992px) {
+  #navbarDropdownMenu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: white;
+    width: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  #navbarDropdownMenu.show {
+    display: block;
+  }
+  /* Ensure sidebar toggle button is visible */
+  #sidebarToggle {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    display: flex !important; /* Ensure it's always shown */
+  }
+}
+@media (min-width: 993px) {
+  /* Original (Desktop) Mode */
+  .navbar-right {
+    display: flex !important;
+  }
+}
+/* Skill Set Table: Ensure Table Headers Are Visible on Large Screens */
+@media (max-width: 992px) {
+  .d-md-flex {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .navbar .navbar-brand img {
+    max-height: 40px; /* Ensures logo stays visible */
+  }
+
+  #navbarDropdownBtn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar .container-fluid {
+    flex-wrap: nowrap; /* Prevents items from stacking */
+  }
+}
+.navbar .row {
+  flex-wrap: wrap !important; /* Allows items to wrap properly */
+}
+small.text-muted {
+  white-space: normal !important; /* Allows wrapping */
+  overflow: visible !important; /* Ensures no hidden text */
+  word-wrap: break-word; /* Ensures text breaks within container */
+  max-width: 100% !important; /* Prevents overflow */
+  display: block;
+}
+@media (max-width: 768px) {
+  .col {
+    min-width: 100% !important; /* Ensures full width in small screens */
+    text-align: left; /* Adjusts alignment if needed */
+  }
+
+  small.text-muted {
+    font-size: 14px; /* Adjust font size for better fit */
+    line-height: 1.2; /* Ensures proper spacing */
+  }
+}
+@media (max-width: 768px) {
+  .navbar .col-auto {
+    padding-top: 8px; /* Moves logo and button slightly down */
+  }
+
+  #sidebarToggle {
+    margin-top: 5px; /* Adjust button alignment */
+  }
+
+  .navbar-brand {
+    margin-top: 5px; /* Moves logo down */
+  }
+}
+@media (max-width: 992px) {
+  .responsive-hide {
+    display: none !important; /* Hides the text in responsive mode */
+  }
+
+  .responsive-buttons {
+    position: relative !important; /* Ensures proper alignment */
+    right: 0 !important;
+    top: 10px !important;
+    justify-content: center !important; /* Centers buttons */
+    width: 100%; /* Ensures full width */
+    display: flex;
+  }
+}
+@media (max-width: 992px) {
+  .col small {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) {
+  .hide-in-responsive {
+    display: none !important;
+  }
+}
+@media (max-width: 922px) and (min-width: 768px) {
+  .main-content-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important; /* Ensure it takes full width */
+    padding: 0 15px; /* Add padding to avoid touching screen edges */
+  }
+
+  .card {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px; /* Adjust padding */
+  }
+
+  .row {
+    margin: 0; /* Remove unnecessary margins */
+  }
+}
+@media (max-width: 990px) and (min-width: 922px) {
+  .main-content-container {
+    margin-left: auto !important; /* Center content */
+    margin-right: auto !important;
+    width: 100% !important; /* Make it take full width */
+    padding: 0 20px; /* Add space from screen edges */
+  }
+}
+@media (max-width: 767px) {
+  .main-content-container {
+    margin-left: 0 !important; /* Remove extra left space */
+    margin-right: 0 !important;
+    width: 100% !important; /* Make it take full width */
+    padding: 0 15px; /* Add padding to avoid touching edges */
+  }
+}
+@media (max-width: 992px) {
+  .responsive-hide {
+    display: none !important; /* Hides the text in responsive mode */
+  }
+
+  .responsive-buttons {
+    position: relative !important;
+    right: 0 !important;
+    top: 10px !important;
+    justify-content: center !important;
+    width: 100%;
+    display: flex;
+  }
+}
+.pagination .page-item .page-link {
+  padding: 5px 10px;
+  font-size: 11px;
+  border: none;
+  margin: 0 2px;
+}
+
+.pagination .page-item.active .page-link {
+  color: white;
+  background-color: #0745f9;
+  border-radius: 50%;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: rgba(7, 69, 249, 0.1);
+}
+@media (max-width: 767px) {
+  .pagination {
+    justify-content: center !important;
+  }
+}
+.pagination .page-item {
+  margin: 0 1px !important;
+}
+/* Make checkboxes larger and turn blue when checked */
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #007bff; /* Blue color when checked */
+}
+
+/* Ensure the row structure adjusts properly for responsiveness */
+@media (max-width: 992px) {
+  .col-md-3 {
+    flex: 0 0 50%; /* 2 items per row on medium screens */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-3 {
+    flex: 0 0 100%; /* 1 item per row on small screens */
+    max-width: 100%;
+  }
+}
+/* Checkbox - Bigger with blue check color */
+.checkbox-lg {
+  width: 22px;
+  height: 22px;
+  accent-color: #007bff; /* Blue when checked */
+}
+
+/* Icons - Keep consistent */
+.icon-lg {
+  width: 28px;
+  height: 28px;
+}
+
+.action-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Grid Fixes */
+@media (max-width: 768px) {
+  .checkbox-lg {
+    width: 20px;
+    height: 20px;
+  }
+  .icon-lg {
+    width: 24px;
+    height: 24px;
+  }
+}
+/* Ensure the row is responsive and wraps correctly */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Adjust columns at different breakpoints */
+@media (max-width: 1200px) {
+  .col-md-3 {
+    flex: 0 0 33.33%; /* 3 cards per row */
+    max-width: 33.33%;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-md-3 {
+    flex: 0 0 50%; /* 2 cards per row */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 100%; /* 1 card per row */
+    max-width: 100%;
+  }
+}
+.sidebar .nav-link.active {
+  color: #007bff !important; /* Bootstrap primary blue */
+}
+
+.sidebar .nav-link.inactive {
+  color: #797a7a !important; /* Grey for non-active links */
+}
+.sidebar .nav-link img {
+  filter: grayscale(100%); /* Keeps the icon grey */
+}
+.dropdown-menu {
+  min-width: 100% !important; /* Ensure dropdown matches button width */
+}
+.pagination .page-item .page-link {
+  padding: 5px 10px;
+  font-size: 11px;
+  border: none;
+  margin: 0 2px;
+}
+
+.pagination .page-item.active .page-link {
+  color: white;
+  background-color: #0745f9;
+  border-radius: 50%;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: rgba(7, 69, 249, 0.1);
+}
+@media (max-width: 767px) {
+  .pagination {
+    justify-content: center !important;
+  }
+}
+.pagination .page-item {
+  margin: 0 1px !important;
+}
+.delete-icon {
+  transition: filter 0.3s ease;
+}
+
+.delete-icon:hover {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(98%) saturate(1253%)
+    hue-rotate(340deg) brightness(89%) contrast(85%);
+}
+.edit-icon {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-icon:hover {
+  background-color: rgba(0, 123, 255, 0.2); /* Light blue background */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6); /* Blue glow effect */
+  border-radius: 6px;
+}

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Flow</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm px-3">
+    <div class="container-fluid">
+      <div class="row align-items-center w-100">
+        <!-- Left Section: Sidebar Toggle Button & Logo -->
+        <div class="col-auto d-flex align-items-center flex-shrink-0">
+          <button id="sidebarToggle" class="btn me-2 d-lg-none">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="./Assests/Logo/logo.png" class="logo img-fluid" alt="Logo" style="height: 50px" />
+          </a>
+        </div>
+
+        <!-- Center Section: Title-->
+        <div class="col ms-md-5 ps-md-5 ms-3 ps-3 w-100">
+          <div class="d-flex flex-column flex-wrap w-100">
+            <h6 class="mb-0 fw-bold hide-in-responsive">
+              Skill Sets
+            </h6>
+            <small class="text-muted d-block w-100 mt-1">Learning Paths > Skill Sets</small>
+          </div>
+        </div>
+
+        <!-- Right Section: Navbar Icons for Desktop -->
+        <div class="col-auto d-none d-lg-flex align-items-center">
+          <!-- Language Selector -->
+          <!-- Language Selector -->
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <img src="./Flag.png" class="flag-icon" alt="EN" />
+              EN(UK)
+            </button>
+            <ul class="dropdown-menu w-100">
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <img src="./US.png" class="flag-icon me-2" alt="EN" />
+                  EN(US)
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <img src="./France.png" class="flag-icon me-2" alt="FR" />
+                  FR
+                </a>
+              </li>
+            </ul>
+          </div>
+
+
+          <!-- Notification & Settings Icons -->
+          <button class="btn"><i class="bi bi-bell"></i></button>
+          <button class="btn"><i class="bi bi-gear"></i></button>
+
+          <!-- Profile Section -->
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <img src="./Assests/Logo/profile.png" class="rounded-circle profile-img-navbar" alt="User"
+                style="height: 40px; width: 40px" />
+              <span class="ms-2">Megan Roberts</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Section: Navbar Button for Mobile -->
+        <div class="col-auto d-flex align-items-center d-lg-none ms-auto">
+          <button id="navbarDropdownBtn" class="btn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Responsive Dropdown Menu for Mobile -->
+    <div id="navbarDropdownMenu" class="dropdown-menu dropdown-menu-end d-lg-none">
+      <!-- Language Selector -->
+      <button class="btn dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+        <img src="./Assests/Logo/US.png" class="flag-icon" alt="EN" /> EN(UK)
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">EN(US)</a></li>
+        <li><a class="dropdown-item" href="#">FR</a></li>
+      </ul>
+
+      <!-- Notification & Settings Icons -->
+      <button class="btn w-100">
+        <img src="./Assests/bell.png" alt="Notification" width="20" height="20" />
+      </button>
+      <button class="btn w-100"><i class="bi bi-gear"></i></button>
+
+      <!-- Profile Section -->
+      <div class="dropdown">
+        <button class="btn dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+          <img src="./Assests/Logo/profile.png" class="rounded-circle profile-img" alt="User"
+            style="height: 40px; width: 40px" />
+          <span class="ms-2">Megan Roberts</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Layout: Sidebar + Content -->
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div>
+      <nav id="sidebar" class="sidebar bg-white shadow flex-shrink-0" style="
+            width: 250px;
+            border-right: 1px solid rgb(186, 186, 186) !important;
+          ">
+        <!-- New Sidebar Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdownMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="./Assests/dashboard-icon.png" alt="Dashboard Icon" style="height: 20px; margin-right: 12px" />
+              DASHBOARD
+              <span class="ms-auto">
+                <img src="./Assests/arrow.svg" class="arrow-icon" alt="Arrow"
+                  style="height: 15px; transition: transform 0.3s" />
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="./Assests/team-member.png" alt="team-member Icon" style="height: 20px; margin-right: 12px" />
+              Team MEMBERS
+              <span class="ms-auto">
+                <img src="./Assests/arrow.svg" class="arrow-icon" alt="Arrow"
+                  style="height: 15px; transition: transform 0.3s" />
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa-solid fa-folder-open me-2"></i> PROJECTS
+              <span class="ms-auto">
+                <img src="./Assests/arrow.svg" class="arrow-icon" alt="Arrow"
+                  style="height: 15px; transition: transform 0.3s" />
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="./Assests/clients.png" alt="clients Icon" style="height: 20px; margin-right: 12px" />
+              CLIENTS
+              <span class="ms-auto">
+                <img src="./Assests/arrow.svg" class="arrow-icon" alt="Arrow"
+                  style="height: 15px; transition: transform 0.3s" />
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#learningPathMenu"
+              role="button" aria-expanded="false" aria-controls="learningPathMenu">
+              <img src="./Assests/learning_path.png" alt="Learning Path Icon"
+                style="height: 20px; margin-right: 12px" />
+              LEARNING PATHS
+              <span class="ms-auto">
+                <img src="./Assests/arrow.svg" class="arrow-icon" alt="Arrow"
+                  style="height: 15px; transition: transform 0.3s" />
+              </span>
+            </a>
+            <ul class="collapse list-unstyled ps-4" id="learningPathMenu">
+              <li>
+                <a class="nav-link inactive" href="#">
+                  <img src="./Assests/learning_path.png" alt="Learning Path Icon"
+                    style="height: 20px; margin-right: 12px" />
+                  Learning Path
+                </a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">
+                  <img src="./Assests/courses.png" alt="Courses Icon" style="height: 20px; margin-right: 12px" />
+                  Courses
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="#">
+                  <img src="./Assests/skill sets.png" alt="Skill Sets Icon" style="height: 20px; margin-right: 12px" />
+                  Skill Sets
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content-container flex-grow-1 p-1" style="margin-top: 100px; margin-left: 250px">
+      <div class="container-fluid p-3">
+        <div class="row align-items-center ">
+
+          <!-- Search Skills Title -->
+          <div class="col-12">
+            <h5 class="mb-0 me-2 mb-2">Search Skills</h5>
+          </div>
+
+        </div>
+
+        <div class="row w-100 align-items-center ">
+          <!-- Search Field - Takes 3 Columns on Medium+ Screens, Full Width on Small Screens -->
+          <div class="col-12 col-md-3 p-2 m-0">
+            <div class="position-relative">
+              <input type="text" class="form-control " placeholder="Search">
+            </div>
+          </div>
+
+          <!-- Buttons Aligned to Right - Full Width on Small Screens, Right Aligned on Large Screens -->
+          <div class="col-12 col-md d-flex justify-content-md-end gap-3">
+            <button class="btn btn-outline-primary px-3 d-flex align-items-center">
+              <img src="./Assests/Logo/delete-icon.svg" alt="Delete"
+                style="width: 16px; height: 16px; margin-right: 5px;">
+              DELETE
+            </button>
+            <button class="btn btn-primary d-flex align-items-center">
+              <img src="./Assests/Logo/create-icon.svg" alt="Create"
+                style="width: 16px; height: 16px; margin-right: 5px;">
+              CREATE NEW SKILLS
+            </button>
+          </div>
+        </div>
+        <!-- skills section -->
+        <div class="mt-4">
+
+          <!--1st Row-->
+          <!-- Row for Cards -->
+          <div class="row w-100 mt-3 d-flex flex-wrap">
+
+            <!-- Card 1 -->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/github.png" alt="Git" class="me-2 icon-lg">
+                <span class="flex-grow-1">Git</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/ASP.Net.png" alt="ASP.Net" class="me-2 icon-lg">
+                <span class="flex-grow-1">ASP.Net</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/CSharp.png" alt="CSharp" class="me-2 icon-lg">
+                <span class="flex-grow-1">C#</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/JavaScript.png" alt="JavaScript" class="me-2 icon-lg">
+                <span class="flex-grow-1">JavaScript</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 5-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/html.png" alt="HTML" class="me-2 icon-lg">
+                <span class="flex-grow-1">HTML</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 6-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/python.png" alt="Python" class="me-2 icon-lg">
+                <span class="flex-grow-1">Python</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 7-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/CSS-Logo.png" alt="CSS" class="me-2 icon-lg">
+                <span class="flex-grow-1">CSS</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 8-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/java.png" alt="Java" class="me-2 icon-lg">
+                <span class="flex-grow-1">JAVA</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 9-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/bootstrap.png" alt="Bootstrap" class="me-2 icon-lg">
+                <span class="flex-grow-1">Bootstrap</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 10-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/react.png" alt="ReactJs" class="me-2 icon-lg">
+                <span class="flex-grow-1">React JS</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 11-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/typescript.png" alt="TypeScript" class="me-2 icon-lg">
+                <span class="flex-grow-1">Typescript</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 12-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/angular.png" alt="Angular" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Angular JS</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 13-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/node.png" alt="Node js" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">NODE JS</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 14-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/machine_learning.png" alt="machine_learning" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Machine Learning</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 15-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/artificial.png" alt="Artificial Intilligence" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Artificial Intilligence</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 16-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/Deep-Learning.png" alt="Deep Learning" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Deep Learning</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 17-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/data-analysis.png" alt="Data Analysis" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Data Analysis</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                  <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 18-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/sql.png" alt="SQL" class="me-2 icon-lg">
+                <span class="flex-grow-1">SQL</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 19-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/mysql_.png" alt="MySQL" class="me-2 icon-lg">
+                <span class="flex-grow-1">MySQL</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 20-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/database-management.jpg" alt="Database Management" class="me-2 icon-lg">
+                <!-- <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"> -->
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Database Management</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 21-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/mongodb.png" alt="Mongo DB" class="me-2 icon-lg">
+                <span class="flex-grow-1">MongoDB</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 22-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/sql-server.png" alt="SQL Server" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">SQL Server</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 23-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/apache-kafka.jpg" alt="apache-kafka" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Apache Kafka</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 24-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/postgresql.png" alt="PostgreSQL" class="me-2 icon-lg">
+                <span class="flex-grow-1">PostgreSQL</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 25-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/oracle_sql.png" alt="Oracle" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Oracle SQL</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 26-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/Docker-Symbol.png" alt="Docker" class="me-2 icon-lg">
+                <span class="flex-grow-1">Docker</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 27-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/kubernets.png" alt="Angular" class="me-2 icon-lg">
+                <span class="flex-grow-1">Kubernetes</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 28-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/jira.png" alt="Jira" class="me-2 icon-lg">
+                <span class="flex-grow-1">JIRA</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 29-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/API.jpg" alt="API Testing" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">API Testing</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 30-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/database-management.jpg" alt="Angular" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Database Programming</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 31-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/cypress.png" alt="Cypress.io" class="me-2 icon-lg">
+                <span class="flex-grow-1">Cypress.io</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 32-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/Automation-Testing.jpg" alt="Automation Tesing" class="me-2 icon-lg">
+                <span class="flex-grow-1 text-truncate"
+                  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Automation Tesing</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 33-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/github.png" alt="GitHub" class="me-2 icon-lg">
+                <span class="flex-grow-1">GitHub</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+            <!--card 34-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/Confluence.png" alt="Confluence" class="me-2 icon-lg">
+                <span class="flex-grow-1">Confluence</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 35-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/devops.jpg" alt="DevOps" class="me-2 icon-lg">
+                <span class="flex-grow-1">DevOps</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+
+            <!--card 36-->
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+              <div class="d-flex align-items-center border p-3 bg-white rounded">
+                <input type="checkbox" class="me-2 checkbox-lg">
+                <img src="./Assests/Icons/jenkins.jpg" alt="Jenkins" class="me-2 icon-lg">
+                <span class="flex-grow-1">Jenkins</span>
+                <div class="d-flex">
+                  <img src="./Assests/Logo/delete-icon.svg" alt="Delete" class="delete-icon me-2 action-icon"
+                    style="cursor: pointer;">
+                   <img src="./Assests/Logo/edit-icon.svg" alt="Edit" class="edit-icon action-icon" style="cursor: pointer;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Pagination-->
+
+        <div class="d-flex justify-content-end mt-3">
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link text-dark" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link text-dark" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&lt;</span>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link text-white" href="#" style="background-color: #0745F9; border-radius: 50%;">1</a>
+              </li>
+              <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+              <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+              <li class="page-item"><a class="page-link text-dark" href="#">...</a></li>
+              <li class="page-item"><a class="page-link text-dark" href="#">90</a></li>
+              <li class="page-item">
+                <a class="page-link text-dark" href="#" aria-label="Next">
+                  <span aria-hidden="true">&gt;</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link text-dark" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let links = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+      links.forEach((link) => {
+        let arrow = link.querySelector(".arrow-icon");
+
+        link.addEventListener("click", function () {
+          let expanded = this.getAttribute("aria-expanded") === "true";
+
+          if (expanded) {
+            arrow.style.transform = "rotate(90deg)"; // Open
+          } else {
+            arrow.style.transform = "rotate(0deg)"; // Closed
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
