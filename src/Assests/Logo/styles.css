@@ -559,7 +559,7 @@
 }
 @media (max-width: 768px) {
   .navbar .navbar-brand img {
-    max-height: 40px; /* Ensures logo stays visible */
+    max-height: 40px;
   }
 
   #navbarDropdownBtn {
@@ -570,54 +570,54 @@
   }
 
   .navbar .container-fluid {
-    flex-wrap: nowrap; /* Prevents items from stacking */
+    flex-wrap: nowrap;
   }
 }
 .navbar .row {
-  flex-wrap: wrap !important; /* Allows items to wrap properly */
+  flex-wrap: wrap !important;
 }
 small.text-muted {
-  white-space: normal !important; /* Allows wrapping */
-  overflow: visible !important; /* Ensures no hidden text */
-  word-wrap: break-word; /* Ensures text breaks within container */
-  max-width: 100% !important; /* Prevents overflow */
+  white-space: normal !important;
+  overflow: visible !important;
+  word-wrap: break-word;
+  max-width: 100% !important;
   display: block;
 }
 @media (max-width: 768px) {
   .col {
-    min-width: 100% !important; /* Ensures full width in small screens */
-    text-align: left; /* Adjusts alignment if needed */
+    min-width: 100% !important;
+    text-align: left;
   }
 
   small.text-muted {
-    font-size: 14px; /* Adjust font size for better fit */
-    line-height: 1.2; /* Ensures proper spacing */
+    font-size: 14px;
+    line-height: 1.2;
   }
 }
 @media (max-width: 768px) {
   .navbar .col-auto {
-    padding-top: 8px; /* Moves logo and button slightly down */
+    padding-top: 8px;
   }
 
   #sidebarToggle {
-    margin-top: 5px; /* Adjust button alignment */
+    margin-top: 5px;
   }
 
   .navbar-brand {
-    margin-top: 5px; /* Moves logo down */
+    margin-top: 5px;
   }
 }
 @media (max-width: 992px) {
   .responsive-hide {
-    display: none !important; /* Hides the text in responsive mode */
+    display: none !important;
   }
 
   .responsive-buttons {
-    position: relative !important; /* Ensures proper alignment */
+    position: relative !important;
     right: 0 !important;
     top: 10px !important;
-    justify-content: center !important; /* Centers buttons */
-    width: 100%; /* Ensures full width */
+    justify-content: center !important;
+    width: 100%;
     display: flex;
   }
 }
@@ -635,8 +635,8 @@ small.text-muted {
   .main-content-container {
     margin-left: auto !important;
     margin-right: auto !important;
-    width: 100% !important; /* Ensure it takes full width */
-    padding: 0 15px; /* Add padding to avoid touching screen edges */
+    width: 100% !important;
+    padding: 0 15px;
   }
 
   .card {
@@ -654,20 +654,20 @@ small.text-muted {
     margin-left: auto !important; /* Center content */
     margin-right: auto !important;
     width: 100% !important; /* Make it take full width */
-    padding: 0 20px; /* Add space from screen edges */
+    padding: 0 20px;
   }
 }
 @media (max-width: 767px) {
   .main-content-container {
-    margin-left: 0 !important; /* Remove extra left space */
+    margin-left: 0 !important;
     margin-right: 0 !important;
-    width: 100% !important; /* Make it take full width */
-    padding: 0 15px; /* Add padding to avoid touching edges */
+    width: 100% !important;
+    padding: 0 15px;
   }
 }
 @media (max-width: 992px) {
   .responsive-hide {
-    display: none !important; /* Hides the text in responsive mode */
+    display: none !important;
   }
 
   .responsive-buttons {

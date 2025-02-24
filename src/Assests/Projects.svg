@@ -1,0 +1,10 @@
+<svg id="dashboard" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_129693" data-name="Path 129693" d="M0,0H24V24H0Z" fill="none"/>
+  <g id="Group_172689" data-name="Group 172689" transform="translate(1.25 1.25)">
+    <circle id="Ellipse_8140" data-name="Ellipse 8140" cx="2.667" cy="2.667" r="2.667" transform="translate(0.75 15.417)" fill="none" stroke="#0745f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_129713" data-name="Path 129713" d="M.75,18.083V3.417a2.667,2.667,0,0,1,5.333,0V18.083" fill="none" stroke="#0745f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_129714" data-name="Path 129714" d="M3.75,21.167h16a1.333,1.333,0,0,0,1.333-1.333v-14A1.333,1.333,0,0,0,19.75,4.5H6.417" transform="translate(-0.333 -0.417)" fill="none" stroke="#0745f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_129715" data-name="Path 129715" d="M17.333,12.25v5.111H12V12.25" transform="translate(-1.25 -1.278)" fill="none" stroke="#0745f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_129716" data-name="Path 129716" d="M10.5,13.083l4-3.333,4,3.333" transform="translate(-1.083 -1)" fill="none" stroke="#0745f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>
